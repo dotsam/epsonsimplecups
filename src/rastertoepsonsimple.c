@@ -32,7 +32,7 @@
 #include <cups/cups.h>
 #include <cups/ppd.h>
 #include <cups/raster.h>
-#ifdef MACOSX
+#ifdef __APPLE__
 #include <cups/backend.h>
 #include <cups/sidechannel.h>
 #endif
@@ -296,7 +296,7 @@ inline void getPageWidthPageHeight(ppd_file_t * ppd, struct settings_ * settings
     }
 }
 
-inline void initializeSettings(char * commandLineOptionSettings, struct settings_ * settings)
+static inline void initializeSettings(char * commandLineOptionSettings, struct settings_ * settings)
 {
     ppd_file_t *    ppd         = NULL;
     cups_option_t * options     = NULL;

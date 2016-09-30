@@ -20,8 +20,11 @@
  *
  * Original version, Steve Hawley, 5/10/2015
  */
-
+#ifdef __APPLE__
+#include <stdlib.h>
+#else
 #include <malloc.h>
+#endif
 #include <string.h>
 #include "bufferedscanlines.h"
 
